@@ -1,0 +1,106 @@
+<?php
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Fitness Core - <?= $pageName ?></title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="/oda/App/public/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-zrnmn8R8KkWl12rAZFt4yKjxplaDaT7/EUkKm7AovijfrQItFWR7O/JJn4DAa/gx" crossorigin="anonymous">
+</head>
+
+<body class="vh-100">
+    <header class="">
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="/oda/">Fitness Core</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarScroll">
+                    <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/oda/">Accueil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/oda/App/public/src/services.php" id="services">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/oda/App/public/src/a_propos.php">À propos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/oda/App/public/src/boutique.php">Boutique</a>
+                        </li>
+                        <?php if(isset($_SESSION['auth'])) : 
+                        $user = $_SESSION['auth'];
+                        if ($user->roles == 6 ):?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/oda/App/@/admin/admin.php">Admin</a>
+                        </li>
+                        <?php endif; ?>
+                    <?php if($user->roles > 2 || $user->roles == 6):?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/oda/App/@/franchises/franchises.php">Tableau de bord</a>
+                        </li>
+                    <?php endif;?>
+                <?php endif;?>
+
+                    </ul>
+
+                    <?php if (isset($_SESSION['auth'])) : ?>
+                        <li class="navbar-nav nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="/oda/App/public/src/profil.php">Profil</a></li>
+                                <li><a class="dropdown-item" href="/oda/App/public/src/boutique.php">Boutique</a></li>
+                                <?php if($user->roles > 2 OR $user->roles == 6)://franchisés?>
+                                    <li><a class="dropdown-item" href="/oda/App/@/franchises/franchises.php">Tableau de bord</a></li>
+                                <?php endif;?>                   
+                                <?php 
+                                    $user = $_SESSION['auth'];
+                                    if ($user->roles == 6): //PDG
+                                        //5 Directeur Régional <?php if($user->roles )
+                                        //4 Directeur Franchisé 
+                                        //3 Manager
+                                        //2 Coach personnel
+                                        //1 Receptionniste
+                                ?>
+                                        <li><a class="dropdown-item" href="/oda/App/@/admin/admin.php">Admin</a></li>
+                                <?php endif; ?>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="/oda/App/public/src/logout.php">Se déconnecter</a></li>
+                            </ul>
+                        </li>
+
+                    <?php else : ?>
+                        <ul class="navbar-nav navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/oda/App/public/src/login.php">Se connecter</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/oda/App/public/src/register.php">S'enregistrer</a>
+                            </li>
+                        </ul>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container min-vh-100">
+        <?php if (isset($_SESSION['flash'])) : ?>
+            <?php foreach ($_SESSION['flash'] as $type => $message) : ?>
+                <div class="alert alert-<?= $type; ?> mt-3">
+                    <?= $message; ?>
+                </div>
+            <?php endforeach; ?>
+            <?php unset($_SESSION['flash']); ?>
+        <?php endif; ?>
