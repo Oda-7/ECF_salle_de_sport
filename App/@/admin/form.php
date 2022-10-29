@@ -4,12 +4,14 @@ require_once '../../@/sys/functions.php';
 
 $user_id = $_GET['id'];
 $errors = array();
-
+if(isset($_POST['update']) && $_POST['roles'] == 6){
+    return header('location: confirm_pdg.php?id='.$_GET['id'].'&roles='.$_POST['roles']);  
+}   
 if(!empty($_POST['username']) && !empty($_POST['surname']) && !empty($_POST['email'])){
-    
+        
     $req_update = $pdo->prepare('UPDATE users SET username = ?,surname = ?,email = ?, roles = ? WHERE id = "'.$user_id.'"');
     $req_update->execute([$_POST['username'],$_POST['surname'],$_POST['email'], $_POST['roles']]);
-
+    
     return header('Location: admin.php');
 }else{
     if(isset($_POST['update'])){

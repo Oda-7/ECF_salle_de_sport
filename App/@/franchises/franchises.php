@@ -64,7 +64,7 @@ $users = $req->fetchAll();
         <h4 class="mb-4">Voici la liste des employés de votre salle :</h4>
         <a class="btn btn-success my-2" href="#">Créer un employé</a>
     </div>
-    <?php if($_SESSION['auth']->salle_id == null):?>
+    <?php if($_SESSION['auth'] == null && $_SESSION['auth']->salle_id == null):?>
         <p> 'Vous n'etes lié a aucune salles pour le moment '</p>
     <?php else: ?>
     <table class="table align-middle ">
@@ -83,24 +83,12 @@ $users = $req->fetchAll();
         foreach($users as $user => $post){
             echo '
             <tbody>
-                <th>'
-                    . $post->username .
-                '</th>
-                <th>'
-                    . $post->surname .
-                '</th>
-                <th>'
-                    . $post->email .
-                '</th>
-                <th>'
-                    . $post->age .
-                '</th>
-                <th>'
-                    . $post->roles .'
-                </th>
-                <th>'
-                    . $post->confirmed_at .'
-                </th>
+                <th>'. $post->username .'</th>
+                <th>'. $post->surname .'</th>
+                <th>'. $post->email .'</th>
+                <th>'. $post->age .'</th>
+                <th>'. $post->roles .'</th>
+                <th>'. $post->confirmed_at .'</th>
                 <th class="d-flex justify-content-around">
                     <!-- <a class="btn btn-warning my-2" href="/oda/App/@/admin/form.php?id=' . $post->id .'">Modifier</a>
                     <a class="btn btn-danger my-2" href="/oda/App/@/admin/delete.php?id=' . $post->id .'">Supprimer</a> -->
