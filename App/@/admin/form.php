@@ -82,7 +82,8 @@ $name_salle_user = $req_salle_user->fetchAll();
             </select>
             <label>Salles</label>
             <select class="form-select" name="salles" id="salles">
-                <option selected><?php if($salle_id_user == null){
+                <option selected>
+                <?php if($name_salle_user == null){
                     echo ' --- --- ';
                 }else{
                 echo $name_salle_user[0]->id.' - '.$name_salle_user[0]->name ;

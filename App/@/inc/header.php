@@ -45,7 +45,7 @@ if (session_status() == PHP_SESSION_NONE) {
                                 <a class="nav-link" href="/oda/App/@/admin/admin.php">Panel PDG</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/oda/App/@/admin/salle.php">Salle partenaires</a>
+                                <a class="nav-link" href="/oda/App/@/salles/salle.php">Salle partenaires</a>
                             </li>
                             <?php endif; ?>
                         <?php if($user->roles > 2 || $user->roles == 6):?>
