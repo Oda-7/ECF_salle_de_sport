@@ -1,4 +1,4 @@
-<?php $pageName = 'S\'inscrire'; ?>
+<?php $pageName = 'S\'inscrire';// REGISTER A DELETE ?>
 <?php
 require_once '../../@/sys/functions.php';
 session_start();
@@ -48,7 +48,7 @@ if(!empty($_POST)){
         $req->execute([$_POST['username'], $_POST['surname'], $_POST['email'], $password, $_POST['age'], $token]);
         $user_id = $pdo->LastInsertId();
         
-        mail($_POST['email'], "antoinedemarlypro@gmail.com", "Confirmation de votre compte", "Merci de cliquer sur le lien ci-dessous pour confirmer votre compte\n\nhttp://localhost/oda/App/@/sys/confirm.php?id=$user_id&token=$token");
+        mail($_POST['email'], "toma.cimino@hotmail.fr", "Confirmation de votre compte", "Merci de cliquer sur le lien ci-dessous pour confirmer votre compte\n\nhttp://localhost/oda/App/@/sys/confirm.php?id=$user_id&token=$token");
         $_SESSION['flash']['success'] = "Un email de confirmation vous a été envoyer";
         header('Location: login.php');
         exit();

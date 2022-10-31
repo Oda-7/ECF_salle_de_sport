@@ -20,74 +20,58 @@ if (session_status() == PHP_SESSION_NONE) {
     <header class="">
         <nav class="navbar navbar-expand-lg bg-light">
             <div class="container">
+                <img class="img-fluid" src="/oda/App/public/assets/image/logoFitnesscore.jpg">
                 <a class="navbar-brand" href="/oda/">Fitness Core</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarScroll">
-                    <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                    <ul class="navbar-nav me-auto my-2 my-lg-0" style="--bs-scroll-height: 100px;">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="/oda/">Accueil</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/oda/App/public/src/services.php" id="services">Services</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="/oda/App/public/src/a_propos.php">À propos</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/oda/App/public/src/boutique.php">Boutique</a>
-                        </li>
-                        <?php if(isset($_SESSION['auth'])) : 
-                        $user = $_SESSION['auth'];
-                        if ($user->roles == 6 ):?>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/oda/App/@/admin/admin.php">Admin</a>
-                        </li>
-                        <?php endif; ?>
-                    <?php if($user->roles > 2 || $user->roles == 6):?>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/oda/App/@/franchises/franchises.php">Tableau de bord</a>
-                        </li>
+                        
+                <?php if(isset($_SESSION['auth'])) : 
+                    $user = $_SESSION['auth'];
+                    if ($user->roles == 6 ):
+                ?>
+                    <li class="navbar-nav nav-item dropdown">
+                        <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a> 
+                        <ul class="dropdown-menu ">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/oda/App/@/admin/admin.php">Panel PDG</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/oda/App/@/admin/salle.php">Salle partenaires</a>
+                            </li>
+                            <?php endif; ?>
+                        <?php if($user->roles > 2 || $user->roles == 6):?>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/oda/App/@/franchises/franchises.php">Tableau de bord</a>
+                            </li>
+                        </ul>
+                    </li>
                     <?php endif;?>
                 <?php endif;?>
 
                     </ul>
 
                     <?php if (isset($_SESSION['auth'])) : ?>
+                    <ul>
                         <li class="navbar-nav nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="/oda/App/public/src/profil.php">Profil</a></li>
-                                <li><a class="dropdown-item" href="/oda/App/public/src/boutique.php">Boutique</a></li>
-                                <?php if($user->roles > 2 OR $user->roles == 6)://franchisés?>
-                                    <li><a class="dropdown-item" href="/oda/App/@/franchises/franchises.php">Tableau de bord</a></li>
-                                <?php endif;?>                   
-                                <?php 
-                                    $user = $_SESSION['auth'];
-                                    if ($user->roles == 6): //PDG
-                                        //5 Directeur Régional <?php if($user->roles )
-                                        //4 Directeur Franchisé 
-                                        //3 Manager
-                                        //2 Coach personnel
-                                        //1 Receptionniste
-                                ?>
-                                        <li><a class="dropdown-item" href="/oda/App/@/admin/admin.php">Admin</a></li>
-                                <?php endif; ?>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
                                 <li><a class="dropdown-item" href="/oda/App/public/src/logout.php">Se déconnecter</a></li>
                             </ul>
                         </li>
-
+                    </ul>
                     <?php else : ?>
                         <ul class="navbar-nav navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                             <li class="nav-item">
                                 <a class="nav-link" href="/oda/App/public/src/login.php">Se connecter</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/oda/App/public/src/register.php">S'enregistrer</a>
                             </li>
                         </ul>
                     <?php endif; ?>

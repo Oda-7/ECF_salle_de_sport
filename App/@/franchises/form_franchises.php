@@ -9,28 +9,21 @@ if(isset($_POST['update']) && $_POST['roles'] == 6){
 }   
 if(!empty($_POST['username']) && !empty($_POST['surname']) && !empty($_POST['email'])){
         
-    $req_update = $pdo->prepare('UPDATE users SET username = ?,surname = ?,email = ?, roles = ?, salle_id = ? WHERE id = "'.$user_id.'"');
-    $req_update->execute([$_POST['username'],$_POST['surname'],$_POST['email'], $_POST['roles'],$_POST['salles']]);
+    $req_update = $pdo->prepare('UPDATE users SET username = ?,surname = ?,email = ?, roles = ?WHERE id = "'.$user_id.'"');
+    $req_update->execute([$_POST['username'],$_POST['surname'],$_POST['email'], $_POST['roles'],]);
     
-    return header('Location: admin.php');
+    return header('Location: franchises.php');
 }else{
     if(isset($_POST['update'])){
         $errors = '<div class="alert alert-danger" role="alert">Veuillez remplir les champs</div>';
         echo $errors;
     }
 }
-$req_salle_select = $pdo->prepare('SELECT id,name FROM salles');
-$req_salle_select->execute();
-$salles_id = $req_salle_select->fetchAll();
 
 $req = $pdo->prepare("SELECT * FROM users WHERE id='" . $user_id . "'");
 $req->execute();
 $users = $req->fetch();
 
-$salle_id_user = $_GET['salle_id'];
-$req_salle_user = $pdo->prepare('SELECT id,name FROM salles WHERE id = "'.$salle_id_user.'"');
-$req_salle_user->execute();
-$name_salle_user = $req_salle_user->fetchAll();
 ?>
 
 <?php require_once '../../@/inc/header.php'; ?>
@@ -63,41 +56,33 @@ $name_salle_user = $req_salle_user->fetchAll();
                             echo 'Coach personnel';
                         }elseif($users->roles == 3){
                             echo 'Manager';
-                        }elseif($users->roles == 4){
-                            echo 'Directeur Franchisé';
-                        }elseif($users->roles == 5){
-                            echo 'Directeur régionale';
-                        }elseif($users->roles == 6){
-                            echo 'PDG';
-                        } 
+                        }
+                        if($_SESSION['auth']->roles == 6){
+                            if($users->roles == 4){
+                                echo 'Directeur Franchisé';
+                            }elseif($users->roles == 5){
+                                echo 'Directeur régionale';
+                            }elseif($users->roles == 6){
+                                echo 'PDG';
+                            } 
+                        }
                     ?>
                 </option>
                 <option value="0">Membre</option>
                 <option value="1">Receptionniste</option>
                 <option value="2">Coach personnel</option>
                 <option value="3">Manager</option>
-                <option value="4">Directeur Franchisé</option>
-                <option value="5">Directeur régionale</option>
-                <option value="6">PDG</option>
-            </select>
-            <label>Salles</label>
-            <select class="form-select" name="salles" id="salles">
-                <option selected><?php if($salle_id_user == null){
-                    echo ' --- --- ';
-                }else{
-                echo $name_salle_user[0]->id.' - '.$name_salle_user[0]->name ;
+                <?php
+                if($_SESSION['auth']->roles == 6){
+                    echo '<option value="4">Directeur Franchisé</option>
+                    <option value="5">Directeur régionale</option>
+                    <option value="6">PDG</option>';
                 }
-                ?></option>
-                <option value="null"> --- --- </option>
-            <?php 
-                foreach($salles_id as $salle_id => $salle){
-                    echo '<option value="'.$salle_id.'">'.$salle->id.' - '.$salle->name.'</option>';
-                }
-            ?>
+                ?>
             </select>
             <div class="mt-3">
                 <button type="submit" class="btn btn-primary" name="update">Modifier</button>
-                <a class="btn btn-secondary" href="admin.php">Retour</a>
+                <a class="btn btn-secondary" href="franchises.php">Retour</a>
             </div>
         </form>
     </div>

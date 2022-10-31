@@ -21,7 +21,7 @@ if(isset($_POST['valide'])){
     <div class="p-5 my-6 m-auto bg-light rounded-3">
         <h1>Voules vous confirmer le role PDG ? </h1>
         <form action="" method="post">
-            <button type="submit" name="valide" class="btn btn-danger">Validé</button>
+            <button type="submit" name="valide" class="btn btn-success">Validé</button>
             <?php echo '<a type="submit" name="annuler" class="btn btn-warning" href="form.php?id='.$user_id.'">Annuler</a>'; ?>
         </form>
     </div>

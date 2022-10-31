@@ -1,7 +1,7 @@
 <?php $pageName = 'Profil'; ?>
 <?php include '../../@/inc/header.php'; ?>
 
-<div class="w-100 p-5 my-6 m-auto bg-light table-responsive">
+<div class="w-100 p-5 my-6 m-auto bg-light table-responsive rounded-3 h-100">
 <h1>Bonjour, <?= $_SESSION['auth']->username ?></h1>
 <br>
 <h4>Page du Profil</h4>

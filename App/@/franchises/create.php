@@ -6,6 +6,7 @@ session_start();
 if(!empty($_POST)){
     $errors = array();
     require_once '../../@/sys/bd.php';
+    $salle_id = $_GET['salle_id'];
 
     if(empty($_POST['username']) || !preg_match('/^[a-zA-Zéèàêâ]+$/', $_POST['username'])){
         $errors['username'] = "Votre prénom n'est pas valide";
@@ -37,16 +38,16 @@ if(!empty($_POST)){
         }
     }
 
-    if(empty($_POST['password']) && empty($_POST['password_confirm']) != $_POST['password']){
+    if(empty($_POST['password']) != empty($_POST['password_confirm'])){
         $errors['password'] = "Les mots de passe ne sont pas renseigné";
     }
 
-    if(empty($errors)){
-        $req = $pdo->prepare("INSERT INTO users SET username = ?, surname = ?, email = ?, password = ?, age = ?, roles = ?, confirmed_at = NOW()");
+    if(empty($errors)){ 
+        $req = $pdo->prepare("INSERT INTO users SET username = ?, surname = ?, email = ?, password = ?, age = ?, roles = ?,salle_id = ?, confirmed_at = NOW()");
         $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
-        $req->execute([$_POST['username'], $_POST['surname'], $_POST['email'], $password, $_POST['age'],$_POST['roles']]);
+        $req->execute([$_POST['username'], $_POST['surname'], $_POST['email'], $password, $_POST['age'],$_POST['roles'],$salle_id]);
         
-        header('Location: admin.php');
+        header('Location: franchises.php');
         exit();
     }
 }
@@ -68,7 +69,7 @@ if(!empty($_POST)){
 
 <div class="d-flex">
     <div class="p-5 my-6 m-auto bg-light rounded-3">
-        <h1>Ajouter un employé/franchisés</h1>
+        <h1>Ajouter un employé</h1>
         <form action="" method="POST">
             <div class="form-group">
                 <label>Prénom</label>
@@ -100,14 +101,11 @@ if(!empty($_POST)){
                 <option value="1">Receptionniste</option>
                 <option value="2">Coach personnel</option>
                 <option value="3">Manager</option>
-                <option value="4">Directeur franchisé</option>
-                <option value="5">Directeur régionale</option>
-                <option value="6">PDG</option>
             </select>
             
             <div class="mt-3">
                 <button type="submit" class="btn btn-primary" name="update">Ajouter</button>
-                <a class="btn btn-secondary" href="admin.php">Retour</a>
+                <a class="btn btn-secondary" href="franchises.php">Retour</a>
             </div>
         </form>
     </div>
