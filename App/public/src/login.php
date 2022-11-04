@@ -48,7 +48,7 @@ if(isset($_POST['submit'])){
 ?>
 <?php require_once '../../@/inc/header.php'; ?>
 
-<div class="d-flex">
+<div class="d-flex mt-5">
 <div class=" p-5 my-6 m-auto bg-light rounded-3">
 <h1>Se connecter</h1>
 <form method="POST" class="">
