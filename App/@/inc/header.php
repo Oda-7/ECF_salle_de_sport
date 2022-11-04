@@ -31,7 +31,7 @@ if (session_status() == PHP_SESSION_NONE) {
                             <a class="nav-link active" aria-current="page" href="/">Accueil</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="App/public/src/a_propos.php">À propos</a>
+                            <a class="nav-link" href="a_propos.php">À propos</a>
                         </li>
                         
                 <?php if(isset($_SESSION['auth'])) : 
