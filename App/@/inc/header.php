@@ -11,7 +11,7 @@ if (session_status() == PHP_SESSION_NONE) {
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Fitness Core - <?= $pageName ?></title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="stylesheet" href="/App/public/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="App/public/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/fontawesome.min.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-zrnmn8R8KkWl12rAZFt4yKjxplaDaT7/EUkKm7AovijfrQItFWR7O/JJn4DAa/gx" crossorigin="anonymous">
 </head>
@@ -20,7 +20,7 @@ if (session_status() == PHP_SESSION_NONE) {
     <header class="">
         <nav class="navbar navbar-expand-lg bg-light">
             <div class="container">
-                <img class="img-fluid" src="App/public/assets/image/logoFitnesscore.jpg">
+                <img class="img-fluid" src="App/public/assets/image/logofitnesscore.jpg">
                 <a class="navbar-brand" href="/">Fitness Core</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
