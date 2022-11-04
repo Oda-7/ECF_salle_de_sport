@@ -16,7 +16,7 @@ if(!empty($_POST) && !empty($_POST['email'])){
         $pdo->prepare('UPDATE users SET reset_token = ?, reset_at = NOW() WHERE id = ?')->execute([$reset_token, $user->id]);
         $_SESSION['flash']['success'] = "Les instructions de rappel du mot de passe vous ont été envoyées par courrier électronique.";
 
-        mail($_POST['email'],"antoinedemarlypro@gmail.com", "Reset your password", "In order to renationalize your password please click on this link\n\nhttp://localhost/oda/src/reset.php?id={$user->id}&token=$reset_token");
+        mail($_POST['email'],"antoinedemarlypro@gmail.com", "Reset your password", "In order to renationalize your password please click on this link\n\nhttp://localhost/oda/App/public/src/reset.php?id={$user->id}&token=$reset_token");
         header('Location: login.php');
         exit();
     }else{
