@@ -19,7 +19,7 @@ if(isset($_POST['valide'])){
         <h1>Voulez vous vraiment supprimer cette salle ?</h1>
         <form action="" method="post">
             <button type="submit" name="valide" class="btn btn-danger">Validé</button>
-            <a href="franchises.php" type="submit" name="annuler" class="btn btn-warning">Annuler</a>
+            <a href="salle.php" type="submit" name="annuler" class="btn btn-warning">Annuler</a>
         </form>
     </div>
 </div>
