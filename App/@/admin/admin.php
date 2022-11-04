@@ -16,7 +16,7 @@ $users = $req->fetchAll();
 <h1>Bonjour, <?= $_SESSION['auth']->username ?></h1>
 <div class="d-flex justify-content-between">
 <h4 class="mb-4">Voici la liste des employés :</h4>
-<a class="btn btn-success my-2" href="/oda/App/@/admin/create.php">Créer un employé</a>
+<a class="btn btn-success my-2" href="App/@/admin/create.php">Créer un employé</a>
     </div>
 
     <table class="table align-middle">
@@ -46,9 +46,9 @@ $users = $req->fetchAll();
                 echo '<th >
                     <div class="d-flex justify-content-around">';
                     if($post->user_secret != 7){
-                        echo'<a class="btn btn-warning my-2 mx-2" href="/oda/App/@/admin/form.php?id=' . $post->id .'&salle_id='.$post->salle_id.'">Modifier</a>';
+                        echo'<a class="btn btn-warning my-2 mx-2" href="App/@/admin/form.php?id=' . $post->id .'&salle_id='.$post->salle_id.'">Modifier</a>';
                         if($post->roles = 6 || $post->roles = 4){
-                            echo '<a class="btn btn-danger my-2 mx-2" href="/oda/App/@/admin/delete.php?id=' . $post->id .'">Supprimer</a>  ';
+                            echo '<a class="btn btn-danger my-2 mx-2" href="App/@/admin/delete.php?id=' . $post->id .'">Supprimer</a>  ';
                         }
                     }else{
                         echo'<p>Aucune action</p><br><p></p>';

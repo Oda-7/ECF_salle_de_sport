@@ -65,10 +65,10 @@ $users = $req->fetchAll();
         <?php
             if($_SESSION['auth']->roles == 6 ){
                 if(isset($_POST['salles'])){
-                    echo'<a class="btn btn-success my-2" href="/oda/App/@/franchises/create.php?salle_id='.$_POST['salles'].'">Ajouter un employé</a>'; 
+                    echo'<a class="btn btn-success my-2" href="App/@/franchises/create.php?salle_id='.$_POST['salles'].'">Ajouter un employé</a>'; 
                 }
             }else{
-                echo'<a class="btn btn-success my-2" href="/oda/App/@/franchises/create.php?salle_id='.$_SESSION['auth']->salle_id.'">Ajouter un employé</a>'; 
+                echo'<a class="btn btn-success my-2" href="App/@/franchises/create.php?salle_id='.$_SESSION['auth']->salle_id.'">Ajouter un employé</a>'; 
             }
         ?>
     </div>
@@ -101,8 +101,8 @@ $users = $req->fetchAll();
                 <div> ';
                 if($post->roles < 4 || $_SESSION['auth']->roles == 6){
                     echo '
-                    <a class="btn btn-warning my-2 mx-2" href="/oda/App/@/franchises/form_franchises.php?id=' . $post->id .'">Modifier</a>
-                    <a class="btn btn-danger my-2 mx-2" href="/oda/App/@/franchises/delete.php?id=' . $post->id .'">Supprimer</a>
+                    <a class="btn btn-warning my-2 mx-2" href="App/@/franchises/form_franchises.php?id=' . $post->id .'">Modifier</a>
+                    <a class="btn btn-danger my-2 mx-2" href="App/@/franchises/delete.php?id=' . $post->id .'">Supprimer</a>
                 ';
                 }else{
                     echo'<p>Aucune action</p><br><p></p>';
