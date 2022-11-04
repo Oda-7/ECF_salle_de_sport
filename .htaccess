@@ -1,4 +1,4 @@
-DirectoryIndex index.php
+DirectoryIndex App/public/src/index.php
 
 RewriteEngine On
 RewriteRule FitnessCore index.php
