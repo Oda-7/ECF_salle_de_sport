@@ -1,4 +1,4 @@
 DirectoryIndex App/public/src/index.php
 
 RewriteEngine On
-RewriteRule FitnessCore index.php
+RewriteRule !\.(js|ico|gif|jpg|png|css)$ index.php
