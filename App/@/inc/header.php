@@ -21,14 +21,14 @@ if (session_status() == PHP_SESSION_NONE) {
         <nav class="navbar navbar-expand-lg bg-light">
             <div class="container">
                 <img class="img-fluid" src="/oda/App/public/assets/image/logofitnesscore.jpg">
-                <a class="navbar-brand" href="/">Fitness Core</a>
+                <a class="navbar-brand" href="/oda/">Fitness Core</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarScroll">
                     <ul class="navbar-nav me-auto my-2 my-lg-0" style="--bs-scroll-height: 100px;">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/">Accueil</a>
+                            <a class="nav-link active" aria-current="page" href="/oda/">Accueil</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/oda/App/public/src/a_propos.php">À propos</a>
@@ -42,15 +42,15 @@ if (session_status() == PHP_SESSION_NONE) {
                         <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a> 
                         <ul class="dropdown-menu ">
                             <li class="nav-item">
-                                <a class="nav-link" href="App/@/admin/admin.php">Panel PDG</a>
+                                <a class="nav-link" href="/oda/App/@/admin/admin.php">Panel PDG</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="App/@/salles/salle.php">Salle partenaires</a>
+                                <a class="nav-link" href="/oda/App/@/salles/salle.php">Salle partenaires</a>
                             </li>
                             <?php endif; ?>
                         <?php if($user->roles > 2 || $user->roles == 6):?>
                             <li class="nav-item">
-                                <a class="nav-link" href="App/@/franchises/franchises.php">Tableau de bord</a>
+                                <a class="nav-link" href="/oda/App/@/franchises/franchises.php">Tableau de bord</a>
                             </li>
                         </ul>
                     </li>
