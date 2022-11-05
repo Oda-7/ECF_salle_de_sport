@@ -13,6 +13,7 @@ if(getenv('JAWSDB_URL') !== false){
         // set the PDO error mode to exception
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
+        
         header('Location: index.php');
         }
     catch(PDOException $e)

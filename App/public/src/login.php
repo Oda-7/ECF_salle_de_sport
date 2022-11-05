@@ -29,6 +29,7 @@ if(isset($_POST['submit'])){
                         setcookie('remember', $user->id . '//' . $remember_token . sha1($user->id . 'ratonlaveurs'), time() + 60 * 60 * 24 * 7);
                     }
                     
+                    header('Location: index.php');
                     exit();
                 }else{
                     $_SESSION['flash']['danger'] = "Veuillez confirmer votre E-mail";
