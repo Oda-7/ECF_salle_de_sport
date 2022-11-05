@@ -42,7 +42,7 @@ if (session_status() == PHP_SESSION_NONE) {
                         <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a> 
                         <ul class="dropdown-menu ">
                             <li class="nav-item">
-                                <a class="nav-link" href="/App/@/admin/admin.php">Panel PDG</a>
+                                <a class="nav-link" href="admin.php">Panel PDG</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/App/@/salles/salle.php">Salle partenaires</a>
