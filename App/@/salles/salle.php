@@ -13,7 +13,7 @@ $salles = $req->fetchAll();
 <div class="mx-5">
     <div>
         <h1 class="my-4">Voici la liste des salles :</h1>
-        <a class="btn btn-success my-2" href="/oda/App/@/salles/create.php">Ajouter une salle</a>
+        <a class="btn btn-success my-2" href="/App/@/salles/create.php">Ajouter une salle</a>
         
     </div>
     <?php foreach($salles as $salle => $key){
@@ -23,7 +23,7 @@ $salles = $req->fetchAll();
                 <h5 class="card-title">'.$key->name.'</h5>
                 <p class="card-text">'.$key->description.'</p>
                 <p class="card-text">'.$key->adress.'</p>
-                <a class="btn btn-danger my-2" href="/oda/App/@/salles/delete.php?id='.$key->id.'">Supprimer une salle</a>
+                <a class="btn btn-danger my-2" href="/App/@/salles/delete.php?id='.$key->id.'">Supprimer une salle</a>
             </div>
         </div>';
     }

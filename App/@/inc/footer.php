@@ -90,7 +90,7 @@
     <a class="text-reset fw-bold" href="#">Fitness_core.fr</a>
   </div>
 </footer>
-<script src="/oda/App/public/assets/js/popper.min.js"></script>
-<script src="/oda/App/public/assets/js/bootstrap.min.js"></script>
+<script src="/App/public/assets/js/popper.min.js"></script>
+<script src="/App/public/assets/js/bootstrap.min.js"></script>
 </body>
 </html>
