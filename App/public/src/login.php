@@ -29,8 +29,6 @@ if(isset($_POST['submit'])){
                         setcookie('remember', $user->id . '//' . $remember_token . sha1($user->id . 'ratonlaveurs'), time() + 60 * 60 * 24 * 7);
                     }
                     
-                    
-                    header('Location: index.php');
                     exit();
                 }else{
                     $_SESSION['flash']['danger'] = "Veuillez confirmer votre E-mail";
@@ -57,16 +55,16 @@ if(isset($_POST['submit'])){
             <input type="email" name="email" class="form-control"/>
         </div>
         <div class="form-group">
-            <label>Password <a href="forget.php"> (Forget password)</a></label>
+            <label>Mot de passe <a href="forget.php"> (mot de passe oublie ?)</a></label>
             <input type="password" name="password" class="form-control"/>
         </div>
         <div class="form-group">
             <label>
-                <input type="checkbox" name="remember" value="1"/>Remember me
+                <input type="checkbox" name="remember" value="1"/>Se souvenir de moi
             </label>
         </div>
 
-        <button name="submit" type="submit" class="btn btn-primary">Login</button>
+        <button name="submit" type="submit" class="btn btn-primary">Se connecter</button>
     </form>
 </div>
 </div>
