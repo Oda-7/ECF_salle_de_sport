@@ -1,1 +1,4 @@
 DirectoryIndex App/public/src/index.php
+
+Options All -Indexes
+RewriteEngine On
