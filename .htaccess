@@ -1,1 +1,3 @@
-DirectoryIndex App/public/src/index.php App/@/admin/admin.php
+DirectoryIndex App/public/src/index.php 
+
+AcceptPathInfo On
