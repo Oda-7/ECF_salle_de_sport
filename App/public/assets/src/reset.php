@@ -34,7 +34,7 @@ if(isset($_GET['id']) && isset($_GET['token'])){
     exit();
 }
 ?>
-<?php require '../@/inc/header.php'; ?>
+<?php require '../../@/inc/header.php'; ?>
 
 <h1>Change ton mon de passe</h1>
 
@@ -51,4 +51,4 @@ if(isset($_GET['id']) && isset($_GET['token'])){
     <button type="submit" class="btn btn-primary">Reset password</button>
 </form>
 
-<?php require_once '../@/inc/footer.php'; ?>
+<?php require_once '../../@/inc/footer.php'; ?>

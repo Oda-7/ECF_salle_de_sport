@@ -45,7 +45,7 @@ if(isset($_POST['submit'])){
 }
 
 ?>
-<?php require_once '../@/inc/header.php'; ?>
+<?php require_once '../../@/inc/header.php'; ?>
 
 <div class="d-flex mt-5">
 <div class=" p-5 my-6 m-auto bg-light rounded-3">
@@ -70,4 +70,4 @@ if(isset($_POST['submit'])){
 </div>
 </div>
 
-<?php require_once '../@/inc/footer.php'; ?>
+<?php require_once '../../@/inc/footer.php'; ?>

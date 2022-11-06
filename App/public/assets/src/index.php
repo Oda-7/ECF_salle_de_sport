@@ -1,6 +1,6 @@
 <?php session_start(); ?>
 <?php $pageName = 'Accueil'; ?>
-<?php include '../@/inc/header.php'; ?>
+<?php include '../../@/inc/header.php'; ?>
 
 <section>
     <h1 class="my-4">Accueil</h1>
@@ -25,5 +25,5 @@
     </div>
 </section>
 
-<?php include '../@/inc/footer.php'; ?>
+<?php include '../../@/inc/footer.php'; ?>
 

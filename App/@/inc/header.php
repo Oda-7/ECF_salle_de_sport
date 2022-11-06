@@ -31,7 +31,7 @@ if (session_status() == PHP_SESSION_NONE) {
                             <a class="nav-link active" aria-current="page" href="/">Accueil</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/App/src/a_propos.php">À propos</a>
+                            <a class="nav-link" href="/App/public/src/a_propos.php">À propos</a>
                         </li>
                         
                 <?php 
@@ -39,7 +39,7 @@ if (session_status() == PHP_SESSION_NONE) {
                     $user = $_SESSION['auth'];
                 ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="/App/src/profil.php">Profil</a>
+                        <a class="nav-link" href="/App/public/src/profil.php">Profil</a>
                     </li>
                 <?php
                     if ($user->roles == 6 ):
@@ -70,14 +70,14 @@ if (session_status() == PHP_SESSION_NONE) {
                         <li class="navbar-nav nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="/App/src/logout.php">Se déconnecter</a></li>
+                                <li><a class="dropdown-item" href="/App/public/src/logout.php">Se déconnecter</a></li>
                             </ul>
                         </li>
                     </ul>
                     <?php else : ?>
                         <ul class="navbar-nav navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                             <li class="nav-item">
-                                <a class="nav-link" href="/App/src/login.php">Se connecter</a>
+                                <a class="nav-link" href="/App/public/src/login.php">Se connecter</a>
                             </li>
                         </ul>
                     <?php endif; ?>
