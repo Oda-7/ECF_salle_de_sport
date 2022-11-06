@@ -39,13 +39,13 @@ if (session_status() == PHP_SESSION_NONE) {
                     $user = $_SESSION['auth'];
                 ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="/App/public/src/profil.php">À propos</a>
+                        <a class="nav-link" href="/App/public/src/profil.php">Profil</a>
                     </li>
                 <?php
                     if ($user->roles == 6 ):
                 ?>
                     <li class="navbar-nav nav-item dropdown">
-                        <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a> 
+                        <a class="nav-link dropdown-toggle " href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a> 
                         <ul class="dropdown-menu ">
                             <li class="nav-item">
                                 <a class="nav-link" href="/App/@/admin/admin.php">Panel PDG</a>
