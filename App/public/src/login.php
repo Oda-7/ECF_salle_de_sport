@@ -5,7 +5,7 @@ require_once '../../@/sys/functions.php';
 reconnect_from_cookie();
 
 if(isset($_SESSION['auth'])){
-    header('Location: index.php');
+    header('Location: /');
     exit();
 }
 
