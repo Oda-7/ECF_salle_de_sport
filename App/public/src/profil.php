@@ -1,10 +1,6 @@
 <?php $pageName = 'Profil'; ?>
 <?php 
 
-if(!isset($_SESSION['auth'])){
-  header('Location: /');
-  exit();
-}
 
 include '../../@/inc/header.php'; 
 
