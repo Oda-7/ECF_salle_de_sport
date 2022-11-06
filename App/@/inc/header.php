@@ -34,8 +34,14 @@ if (session_status() == PHP_SESSION_NONE) {
                             <a class="nav-link" href="/App/public/src/a_propos.php">À propos</a>
                         </li>
                         
-                <?php if(isset($_SESSION['auth'])) : 
+                <?php 
+                if(isset($_SESSION['auth'])) : 
                     $user = $_SESSION['auth'];
+                ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/App/public/src/profil.php">À propos</a>
+                    </li>
+                <?php
                     if ($user->roles == 6 ):
                 ?>
                     <li class="navbar-nav nav-item dropdown">
