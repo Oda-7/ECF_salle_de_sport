@@ -39,7 +39,7 @@ if (session_status() == PHP_SESSION_NONE) {
                     $user = $_SESSION['auth'];
                 ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="/App/public/src/profil.php">Profil</a>
+                        <a class="nav-link" href="/App/@/admin/admin.php">Profil</a>
                     </li>
                 <?php
                     if ($user->roles == 6 ):
