@@ -1,5 +1,5 @@
 <?php $pageName = 'À propos'; ?>
-<?php include '../../@/inc/header.php'; ?>
+<?php include '../@/inc/header.php'; ?>
 
 <div class="container">
     <h1>Fitness Core</h1>
@@ -9,4 +9,4 @@
     </p>
 </div>
 
-<?php include '../../@/inc/footer.php'; ?>
+<?php include '../@/inc/footer.php'; ?>

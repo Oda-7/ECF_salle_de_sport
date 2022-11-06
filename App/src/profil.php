@@ -1,7 +1,7 @@
 <?php $pageName = 'Profil'; ?>
 <?php 
 
-include '../../@/inc/header.php'; 
+include '../@/inc/header.php'; 
 if(!isset($_SESSION['auth'])){
   header('Location: /');
   exit();
@@ -35,4 +35,4 @@ if(!isset($_SESSION['auth'])){
 </table>
 </div>
 
-<?php include '../../@/inc/footer.php'; ?>
+<?php include '../@/inc/footer.php'; ?>

@@ -25,7 +25,7 @@ if(!empty($_POST) && !empty($_POST['email'])){
 }
 ?>
 <?php $pageName = 'Mot de passe oublié'; ?>
-<?php require '../../@/inc/header.php'; ?>
+<?php require '../@/inc/header.php'; ?>
 
 <div class="w-50 p-5 my-5 m-auto bg-light">
     <h1>Forget password</h1>
@@ -39,4 +39,4 @@ if(!empty($_POST) && !empty($_POST['email'])){
     </form>
 </div>
 
-<?php require_once '../../@/inc/footer.php'; ?>
+<?php require_once '../@/inc/footer.php'; ?>
