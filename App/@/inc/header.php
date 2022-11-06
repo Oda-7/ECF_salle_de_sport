@@ -71,7 +71,7 @@ if (session_status() == PHP_SESSION_NONE) {
                     <?php else : ?>
                         <ul class="navbar-nav navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                             <li class="nav-item">
-                                <a class="nav-link" href="/public/src/login.php">Se connecter</a>
+                                <a class="nav-link" href="/App/public/src/login.php">Se connecter</a>
                             </li>
                         </ul>
                     <?php endif; ?>
