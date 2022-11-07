@@ -45,7 +45,7 @@ if (session_status() == PHP_SESSION_NONE) {
                     if ($user->roles == 6 ):
                 ?>
                     <li class="navbar-nav nav-item dropdown">
-                        <a class="nav-link dropdown-toggle " href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a> 
+                        <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a> 
                         <ul class="dropdown-menu ">
                             <li class="nav-item">
                                 <a class="nav-link" href="/App/@/admin/hello.php">Panel PDG</a>
