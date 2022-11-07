@@ -1,6 +1,6 @@
-<?php $pageName = 'Panel PDG';
+<?php 
+$pageName = 'Panel PDG';
 include '../../@/inc/header.php';
-
 
 if(!isset($_SESSION['auth'])){
     header('Location: /');
@@ -16,7 +16,6 @@ $req = $pdo->prepare('SELECT id, username, surname, email, age, roles,confirmed_
 $req->execute();
 $users = $req->fetchAll();
 
-include '../../@/inc/header.php';
 ?>
 
 <div class="w-100 p-5 my-6 m-auto bg-light table-responsive rounded-3">
