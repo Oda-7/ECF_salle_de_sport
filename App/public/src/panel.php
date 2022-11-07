@@ -1,5 +1,10 @@
 <?php $pageName = 'Panel PDG';
 
+if($_SESSION['auth']->roles != 6){
+    header('Location: /');
+    exit();
+}
+
 require_once '../../@/sys/bd.php';
 require_once '../../@/sys/functions.php';
 require_once '../../@/sys/roles.php';
