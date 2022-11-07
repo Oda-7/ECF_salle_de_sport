@@ -6,10 +6,10 @@ if(!isset($_SESSION['auth'])){
     header('Location: /');
 }
   
-require_once '/App/@/sys/functions.php';
-require_once '/App/@/sys/bd.php';
-require_once '/App/@/sys/roles.php';
-require_once '/App/@/sys/salles.php';
+require_once '../sys/functions.php';
+require_once '../sys/bd.php';
+require_once '../sys/roles.php';
+require_once '../sys/salles.php';
 echo 'hello';
 $req = $pdo->prepare('SELECT id, username, surname, email, age, roles,confirmed_at,salle_id,user_secret FROM users ORDER BY roles DESC');
 $req->execute();
