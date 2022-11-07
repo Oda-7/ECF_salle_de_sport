@@ -18,11 +18,11 @@ $users = $req->fetchAll();
 
 ?>
 
-<div class="w-100 p-5 my-6 m-auto bg-light table-responsive rounded-3">
-<h1>Bonjour, <?php echo $_SESSION['auth']->username ?></h1>
-<div class="d-flex justify-content-between">
-<h4 class="mb-4">Voici la liste des employés :</h4>
-<a class="btn btn-success my-2" href="/App/@/admin/create.php">Créer un employé</a>
+<section class="w-100 p-5 my-6 m-auto bg-light table-responsive rounded-3">
+    <h1>Bonjour, <?php echo $_SESSION['auth']->username ?></h1>
+    <div class="d-flex justify-content-between">
+    <h4 class="mb-4">Voici la liste des employés :</h4>
+    <a class="btn btn-success my-2" href="/App/@/admin/create.php">Créer un employé</a>
     </div>
 
     <table class="table align-middle">
@@ -61,6 +61,6 @@ $users = $req->fetchAll();
         ?></tbody>
         <?php endforeach;?>
     </table>
-</div>
+</section>
 
 <?php include '../../@/inc/footer.php'; ?>
