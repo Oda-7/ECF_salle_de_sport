@@ -1,7 +1,7 @@
 <?php $pageName = 'Salle partenaires/franchisés'; 
 
-require_once '../../@/sys/bd.php';
 require_once '../../@/sys/functions.php';
+require_once '../../@/sys/bd.php';
 
 $req = $pdo->prepare('SELECT * FROM salles');
 $req->execute();

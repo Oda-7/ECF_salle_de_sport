@@ -1,11 +1,10 @@
 <?php $pageName = 'Tableau de bord'; //franchisés
 
-require_once '../../@/sys/bd.php';
 require_once '../../@/sys/functions.php';
+require_once '../../@/sys/bd.php';
 require_once '../../@/sys/roles.php';
-?>
 
-<?php include '../../@/inc/header.php';?>
+include '../../@/inc/header.php';?>
 
 <?php 
 
