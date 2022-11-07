@@ -17,7 +17,7 @@ $req->execute();
 $users = $req->fetchAll();
 
 ?>
-
+<div></div>
 <section class="w-100 p-5 my-6 m-auto bg-light table-responsive rounded-3">
     <h1>Bonjour, <?php echo $_SESSION['auth']->username ?></h1>
     <div class="d-flex justify-content-between">
