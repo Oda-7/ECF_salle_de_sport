@@ -10,11 +10,11 @@ require_once '/App/@/sys/functions.php';
 require_once '/App/@/sys/bd.php';
 require_once '/App/@/sys/roles.php';
 require_once '/App/@/sys/salles.php';
-
+echo 'hello';
 $req = $pdo->prepare('SELECT id, username, surname, email, age, roles,confirmed_at,salle_id,user_secret FROM users ORDER BY roles DESC');
 $req->execute();
 $users = $req->fetchAll();
-echo 'hello';
+
 ?>
 <div></div>
 <section class="w-100 p-5 my-6 m-auto bg-light table-responsive rounded-3">
