@@ -1,6 +1,6 @@
 <?php $pageName = 'Panel PDG';
 
-if(isset($_SESSION['auth'])){
+if(!isset($_SESSION['auth'])){
     header('Location: /');
     exit();
 }
