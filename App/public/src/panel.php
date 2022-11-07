@@ -1,6 +1,6 @@
 <?php $pageName = 'Panel PDG';
 
-if($_SESSION['auth']->roles != 6){
+if(isset($_SESSION['auth'])){
     header('Location: /');
     exit();
 }
