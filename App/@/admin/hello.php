@@ -2,4 +2,4 @@
 include '../../@/inc/header.php';
 
 require_once '../../@/sys/functions.php';
-include '../../@/sys/bd.php';
+include '/App/@/sys/bd.php';
