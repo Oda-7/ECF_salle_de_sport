@@ -17,10 +17,10 @@ require_once '../sys/functions.php';
         
     </div>
     <?php
-    /*require_once '../sys/bd.php';
+    require_once '../sys/bd.php';
     $req = $pdo->prepare('SELECT * FROM salles');
     $req->execute();
-    $salles = $req->fetchAll(); */
+    $salles = $req->fetchAll(); 
     foreach($salles as $salle => $key){
         echo '<div class="card flex-sm-row my-4 rounded-3" >
             <img class="card-img-left img-fluid rounded-3" src="export.php?id='.$key->id.'" alt="Card image cap" style="width:18rem">
