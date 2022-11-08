@@ -9,7 +9,7 @@ if(empty($_SESSION['auth'])){
     require '/App/@/sys/bd.php';
 }
 
-require '../sys/functions.php';
+require '/App/sys/functions.php';
 
 echo 'hello';
 require_once '/App/@/sys/roles.php';
@@ -65,4 +65,4 @@ $users = $req->fetchAll();
     </table>
 </section>
 
-<?php include '../../@/inc/footer.php'; ?>
+<?php include '../@/inc/footer.php'; ?>
