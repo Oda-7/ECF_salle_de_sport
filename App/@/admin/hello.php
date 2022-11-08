@@ -7,9 +7,9 @@ if(empty($_SESSION['auth'])){
     exit();
 }
     
-require '/../functions.php';
+require '/App/functions.php';
 echo 'hello';
-require '/App/@/sys/bd.php';
+require_once '/App/@/sys/bd.php';
 
 
 $req = $pdo->prepare('SELECT id, username, surname, email, age, roles,confirmed_at,salle_id,user_secret FROM users ORDER BY roles DESC');
