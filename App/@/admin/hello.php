@@ -3,7 +3,7 @@ $pageName = 'Panel PDG';
 include '../inc/header.php';
 
 require_once '../sys/functions.php';
-require_once '../sys/bd.php';
+require_once '/App/@/sys/bd.php';
 echo 'hello';
 require_once '/App/@/sys/roles.php';
 require_once '/App/@/sys/salles.php';
