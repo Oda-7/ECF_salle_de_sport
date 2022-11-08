@@ -1,6 +1,6 @@
 <?php 
 $pageName = 'Panel PDG';
-include '/../inc/header.php';
+include '../inc/header.php';
 
 if(!isset($_SESSION['auth'])){
     header('Location: /');
