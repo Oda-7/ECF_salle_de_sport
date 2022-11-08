@@ -2,11 +2,6 @@
 $pageName = 'Panel PDG';
 include '../inc/header.php';
 
-if(!isset($_SESSION['auth'])){
-    header('Location: /');
-    exit();
-}
-  
 require_once '/App/@/sys/functions.php';
 echo 'hello';
 require_once '/App/@/sys/bd.php';
