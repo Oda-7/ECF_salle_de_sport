@@ -2,7 +2,7 @@
 $pageName = 'Panel PDG';
 include '../inc/header.php';
 
-require_once '/App/@/sys/functions.php';
+require_once '../sys/functions.php';
 echo 'hello';
 require_once '/App/@/sys/bd.php';
 require_once '/App/@/sys/roles.php';
