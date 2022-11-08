@@ -9,10 +9,6 @@ if(empty($_SESSION['auth'])){
     
 require '../sys/functions.php';
 
-echo 'hello';
-
-
-
 ?>
 
 <section class="w-100 p-5 my-6 m-auto bg-light table-responsive rounded-3">
