@@ -1,6 +1,6 @@
 <?php $pageName = 'Modification de l\'employé';
-require_once '../../@/sys/bd.php';
-require_once '../../@/sys/functions.php';
+require_once '../sys/bd.php';
+require_once '../sys/functions.php';
 
 $user_id = $_GET['id'];
 $errors = array();
@@ -33,7 +33,7 @@ $req_salle_user->execute();
 $name_salle_user = $req_salle_user->fetchAll();
 ?>
 
-<?php require_once '../../@/inc/header.php'; ?>
+<?php require_once '../inc/header.php'; ?>
 
 <div class="d-flex">
     <div class="p-5 my-6 m-auto bg-light rounded-3">
@@ -104,4 +104,4 @@ $name_salle_user = $req_salle_user->fetchAll();
     </div>
 </div>
 
-<?php require_once '../../@/inc/footer.php'; ?>
+<?php require_once '../inc/footer.php'; ?>

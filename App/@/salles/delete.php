@@ -1,6 +1,6 @@
 <?php $pageName = 'Suppression de l\'employé';
-require_once '../../@/sys/bd.php';
-require_once '../../@/sys/functions.php';
+require_once '../sys/bd.php';
+require_once '../sys/functions.php';
 
 $user_id = $_GET['id'];
 
@@ -12,7 +12,7 @@ if(isset($_POST['valide'])){
 
 ?>
 
-<?php require_once '../../@/inc/header.php'; ?>
+<?php require_once '../inc/header.php'; ?>
 
 <div class="d-flex">
     <div class="p-5 my-6 m-auto bg-light rounded-3">

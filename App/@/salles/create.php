@@ -1,12 +1,12 @@
 <?php $pageName = 'Ajout d\'une salle'; ?>
 <?php
-require_once '../../@/sys/functions.php';
+require_once '../sys/functions.php';
 session_start();
 
 if(!empty($_POST)){
     $errors = array();
 
-    require_once '../../@/sys/bd.php';
+    require_once '../sys/bd.php';
     
     if(empty($_POST['name']) || !preg_match('/^[a-zA-Zéèàêâ+\s]+$/', $_POST['name'])){
         $errors['name'] = "Le nom de la salle n'est pas valide ou vide";
@@ -31,7 +31,7 @@ if(!empty($_POST)){
 
 ?>
 
-<?php require_once '../../@/inc/header.php'; ?>
+<?php require_once '../inc/header.php'; ?>
 
 <?php if(!empty($errors)): ?>
     <div class="alert alert-danger">

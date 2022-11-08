@@ -1,6 +1,6 @@
 <?php 
-require_once '../../@/sys/bd.php';
-require_once '../../@/sys/functions.php';
+require_once '../sys/bd.php';
+require_once '../sys/functions.php';
 session_start();
 
 $req = $pdo->prepare('SELECT id,surname,username FROM users');
@@ -20,7 +20,7 @@ if(isset($_POST['update'])){
     }
 } 
 
-require_once '../../@/inc/header.php'; ?>
+require_once '../inc/header.php'; ?>
 
 <?php 
 if($_SESSION['auth']->user_secret):?>
