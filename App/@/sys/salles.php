@@ -3,7 +3,7 @@
 function fetchSalleName($salle_id)
 {
     if(isset($salle_id)){
-        $pdo = New PDO('mysql:dbname=oda;host=localhost', 'root', '');
+        require 'bd.php';
         $req = $pdo->prepare('SELECT name FROM salles WHERE id = "'.$salle_id.'"');
         $req->execute();
         $salle_name = $req->fetch();
