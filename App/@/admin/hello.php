@@ -1,13 +1,13 @@
 <?php 
 $pageName = 'Panel PDG';
-include '../inc/header.php';
+include '/../inc/header.php';
 
 if(!isset($_SESSION['auth'])){
     header('Location: /');
 }
   
 require_once '/App/@/sys/functions.php';
-require_once '/App/@/sys/bd.php';
+//require_once '/App/@/sys/bd.php';
 require_once '/App/@/sys/roles.php';
 require_once '/App/@/sys/salles.php';
 echo 'hello';
