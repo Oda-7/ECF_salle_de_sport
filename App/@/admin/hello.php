@@ -7,7 +7,7 @@ if(empty($_SESSION['auth'])){
     exit();
 }
     
-require '/App/functions.php';
+require '/App/@sys/functions.php';
 echo 'hello';
 require_once '/App/@/sys/bd.php';
 
