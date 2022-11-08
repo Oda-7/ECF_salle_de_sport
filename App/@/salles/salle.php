@@ -1,4 +1,5 @@
-<?php $pageName = 'Salle partenaires/franchisés'; 
+<?php 
+$pageName = 'Salle partenaires'; 
 include '../inc/header.php';
 session_start();
 
@@ -6,6 +7,7 @@ if(empty($_SESSION['auth'])){
     header('Location: /');
     exit();
 }
+require_once '../sys/functions.php';
 ?>
 
 <div class="mx-5">
@@ -15,9 +17,7 @@ if(empty($_SESSION['auth'])){
         
     </div>
     <?php
-    require_once '../sys/functions.php';
     require_once '../sys/bd.php';
-
     $req = $pdo->prepare('SELECT * FROM salles');
     $req->execute();
     $salles = $req->fetchAll(); 
