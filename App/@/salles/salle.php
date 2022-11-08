@@ -16,7 +16,7 @@ require_once '../sys/functions.php';
         
     </div>
 <?php
-    //require_once '../sys/bd.php';
+    require_once '../sys/bd.php';
     $req = $pdo->prepare('SELECT * FROM salles');
     $req->execute();
     $salles = $req->fetchAll();
