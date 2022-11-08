@@ -23,7 +23,7 @@ if(getenv('JAWSDB_URL') !== false){
     }
 } else {
     try{
-        $pdo = new PDO('mysql:dbname=oda;host=localhost', 'root', '');
+        $pdo = new PDO('mysql:host=localhost;dbname=oda','root','');
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
         echo 'Connection réussi Local';
