@@ -8,7 +8,7 @@ if(empty($_SESSION['auth'])){
 }
     
 require '../sys/functions.php';
-require_once '../sys/bd.php';
+
 echo 'hello';
 
 
@@ -38,6 +38,7 @@ $users = $req->fetchAll();
     </thead>
     <tbody>
         <?php
+        require_once '/App/@/sys/bd.php';
         require_once '/App/@/sys/roles.php';
         require_once '/App/@/sys/salles.php';
 
