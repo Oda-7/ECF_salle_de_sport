@@ -12,9 +12,6 @@ require '../sys/functions.php';
 echo 'hello';
 
 
-$req = $pdo->prepare('SELECT id, username, surname, email, age, roles,confirmed_at,salle_id,user_secret FROM users ORDER BY roles DESC');
-$req->execute();
-$users = $req->fetchAll();
 
 ?>
 
@@ -39,6 +36,10 @@ $users = $req->fetchAll();
     <tbody>
         <?php
         require_once '/App/@/sys/bd.php';
+        $req = $pdo->prepare('SELECT id, username, surname, email, age, roles,confirmed_at,salle_id,user_secret FROM users ORDER BY roles DESC');
+        $req->execute();
+        $users = $req->fetchAll();
+
         require_once '/App/@/sys/roles.php';
         require_once '/App/@/sys/salles.php';
 
