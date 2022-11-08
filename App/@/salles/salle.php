@@ -1,8 +1,8 @@
 <?php $pageName = 'Salle partenaires/franchisés'; 
 session_start();
 
-require_once '../@/sys/functions.php';
-require_once '../@/sys/bd.php';
+require_once '../sys/functions.php';
+require_once '../sys/bd.php';
 
 $req = $pdo->prepare('SELECT * FROM salles');
 $req->execute();
@@ -31,4 +31,4 @@ $salles = $req->fetchAll();
     ?>
 </div>
 
-<?php include '../@/inc/footer.php'; ?>
+<?php include '../inc/footer.php'; ?>

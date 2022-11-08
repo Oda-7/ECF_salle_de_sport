@@ -1,10 +1,10 @@
 <?php $pageName = 'Tableau de bord'; //franchisés
 
-require_once '../../@/sys/functions.php';
-require_once '../../@/sys/bd.php';
-require_once '../../@/sys/roles.php';
+require_once '../sys/functions.php';
+require_once '../sys/bd.php';
+require_once '../sys/roles.php';
 
-include '../../@/inc/header.php';?>
+include '../inc/header.php';?>
 
 <?php 
 
@@ -117,4 +117,4 @@ $users = $req->fetchAll();
 
 
 
-<?php include '../../@/inc/footer.php'; ?>
+<?php include '../inc/footer.php'; ?>
