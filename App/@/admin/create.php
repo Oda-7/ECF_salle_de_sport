@@ -1,11 +1,11 @@
 <?php $pageName = 'Création de l\'employé'; ?>
 <?php
-require_once '../../@/sys/functions.php';
+require_once '../sys/functions.php';
 session_start();
 
 if(!empty($_POST)){
     $errors = array();
-    require_once '../../@/sys/bd.php';
+    require_once '../sys/bd.php';
 
     if(empty($_POST['username']) || !preg_match('/^[a-zA-Zéèàêâ]+$/', $_POST['username'])){
         $errors['username'] = "Votre prénom n'est pas valide";
@@ -53,7 +53,7 @@ if(!empty($_POST)){
 
 ?>
 
-<?php require_once '../../@/inc/header.php'; ?>
+<?php require_once '../inc/header.php'; ?>
 
 <?php if(!empty($errors)): ?>
     <div class="alert alert-danger">
@@ -113,4 +113,4 @@ if(!empty($_POST)){
     </div>
 </div>
 
-<?php require_once '../../@/inc/footer.php'; ?>
+<?php require_once '../inc/footer.php'; ?>

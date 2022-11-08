@@ -1,4 +1,5 @@
 <?php $pageName = 'Salle partenaires/franchisés'; 
+include '../inc/header.php';
 session_start();
 
 require_once '../sys/functions.php';
@@ -9,7 +10,7 @@ $req->execute();
 $salles = $req->fetchAll();
 ?>
 
-<?php include '../inc/header.php';?>
+ 
 
 <div class="mx-5">
     <div>
