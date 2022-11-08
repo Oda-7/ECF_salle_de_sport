@@ -1,7 +1,6 @@
 <?php 
 $pageName = 'Salle partenaires'; 
 include '../inc/header.php';
-session_start();
 
 if(empty($_SESSION['auth'])){
     header('Location: /');
@@ -16,11 +15,12 @@ require_once '../sys/functions.php';
         <a class="btn btn-success my-2" href="/App/@/salles/create.php">Ajouter une salle</a>
         
     </div>
-    <?php
-    require_once '../sys/bd.php';
+<?php
+    //require_once '../sys/bd.php';
     $req = $pdo->prepare('SELECT * FROM salles');
     $req->execute();
-    $salles = $req->fetchAll(); 
+    $salles = $req->fetchAll();
+
     foreach($salles as $salle => $key){
         echo '<div class="card flex-sm-row my-4 rounded-3" >
             <img class="card-img-left img-fluid rounded-3" src="export.php?id='.$key->id.'" alt="Card image cap" style="width:18rem">
