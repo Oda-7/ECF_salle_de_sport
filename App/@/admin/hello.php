@@ -8,8 +8,8 @@ if(empty($_SESSION['auth'])){
 }
     
 require '../sys/functions.php';
+require_once '../sys/bd.php';
 echo 'hello';
-require_once '/App/@/sys/bd.php';
 
 
 $req = $pdo->prepare('SELECT id, username, surname, email, age, roles,confirmed_at,salle_id,user_secret FROM users ORDER BY roles DESC');
