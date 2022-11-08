@@ -31,7 +31,7 @@ require '../sys/functions.php';
         <th>Action</th>
     </thead>
     <tbody>
-        <?php
+    <?php
         require_once '../sys/bd.php';
         $req = $pdo->prepare('SELECT id, username, surname, email, age, roles,confirmed_at,salle_id,user_secret FROM users ORDER BY roles DESC');
         $req->execute();
@@ -40,27 +40,29 @@ require '../sys/functions.php';
         require_once '../sys/roles.php';
         require_once '../sys/salles.php';
 
-        foreach($users as $user => $post): ?>
-        <?php echo '<th>'. $post->username .'</th>';
-            echo '<th>'. $post->surname .'</th>';
-            echo '<th>'. $post->email .'</th>';
-            echo '<th>'. $post->age .'</th>';
-            echo '<th>'. roles($post->roles).'</th>';
-            echo '<th>'. $post->confirmed_at .'</th>';
-            echo '<th>'. fetchSalleName($post->salle_id) .'</th>';
-            echo '<th >
-                <div class="d-flex justify-content-around">';
-                if($post->user_secret !== 7){
-                    echo'<a class="btn btn-warning my-2 mx-2" href="/App/@/admin/form.php?id=' . $post->id .'&salle_id='.$post->salle_id.'">Modifier</a>';
-                    if($post->roles == 6 || $post->roles == 4){
-                        echo '<a class="btn btn-danger my-2 mx-2" href="/App/@/admin/delete.php?id=' . $post->id .'">Supprimer</a>  ';
-                    }
-                }else{
-                    echo'<p>Aucune action</p><br><p></p>';
+        foreach($users as $user => $post): 
+    ?>
+    <?php echo '<th>'. $post->username .'</th>';
+        echo '<th>'. $post->surname .'</th>';
+        echo '<th>'. $post->email .'</th>';
+        echo '<th>'. $post->age .'</th>';
+        echo '<th>'. roles($post->roles).'</th>';
+        echo '<th>'. $post->confirmed_at .'</th>';
+        echo '<th>'. fetchSalleName($post->salle_id) .'</th>';
+        echo '<th >
+            <div class="d-flex justify-content-around">';
+            if($post->user_secret !== 7){
+                echo'<a class="btn btn-warning my-2 mx-2" href="/App/@/admin/form.php?id=' . $post->id .'&salle_id='.$post->salle_id.'">Modifier</a>';
+                if($post->roles == 6 || $post->roles == 4){
+                    echo '<a class="btn btn-danger my-2 mx-2" href="/App/@/admin/delete.php?id=' . $post->id .'">Supprimer</a>  ';
                 }
-                echo '</div>
-            </th>';
-        ?></tbody>
+            }else{
+                echo'<p>Aucune action</p><br><p></p>';
+            }
+            echo '</div>
+        </th>';
+    ?>
+    </tbody>
         <?php endforeach;?>
     </table>
 </section>
