@@ -1,15 +1,15 @@
 <?php $pageName = 'Panel PDG';
 
-require_once '../../@/sys/functions.php';
-require_once '../../@/sys/bd.php';
-require_once '../../@/sys/roles.php';
-require_once '../../@/sys/salles.php';
+require_once '../sys/functions.php';
+require_once '../sys/bd.php';
+require_once '../sys/roles.php';
+require_once '../sys/salles.php';
 
 $req = $pdo->prepare('SELECT id, username, surname, email, age, roles,confirmed_at,salle_id,user_secret FROM users ORDER BY roles DESC');
 $req->execute();
 $users = $req->fetchAll();
 
-include '../../@/inc/header.php';?>
+include '../inc/header.php';?>
 
 <div class="w-100 p-5 my-6 m-auto bg-light table-responsive rounded-3">
 <h1>Bonjour, <?= $_SESSION['auth']->username ?></h1>

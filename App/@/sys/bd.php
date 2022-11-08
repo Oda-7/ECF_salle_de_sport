@@ -17,12 +17,17 @@ if(getenv('JAWSDB_URL') !== false){
         header('Location: index.php');
         }
     catch(PDOException $e)
-        {
-        echo "Connection failed: " . $e->getMessage();
-        }
+    {
+        echo "Connection échoué: " . $e->getMessage();
+    }
 } else {
-    $pdo = new PDO('mysql:dbname=oda;host=localhost', 'root', '');
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
+    try{
+        $pdo = new PDO('mysql:dbname=oda;host=localhost', 'root', '');
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
+    }catch(PDOException $e)
+    {
+        echo "Connection échoué: ". $e->getMessage();
+    }
 }
 
