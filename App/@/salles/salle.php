@@ -1,4 +1,5 @@
 <?php $pageName = 'Salle partenaires/franchisés'; 
+session_start();
 
 require_once '../../@/sys/functions.php';
 require_once '../../@/sys/bd.php';
