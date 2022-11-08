@@ -8,7 +8,7 @@ if(empty($_SESSION['auth'])){
     exit();
 }
     
-require '../sys/functions.php';
+require_once '../sys/functions.php';
 
 ?>
 
