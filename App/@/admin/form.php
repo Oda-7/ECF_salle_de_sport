@@ -2,6 +2,11 @@
 require_once '../sys/bd.php';
 require_once '../sys/functions.php';
 
+if(empty($_SESSION['auth'])){
+    header('Location: /');
+    exit();
+}
+
 $user_id = $_GET['id'];
 $errors = array();
 if(isset($_POST['update']) && $_POST['roles'] == 6){
@@ -82,14 +87,14 @@ $name_salle_user = $req_salle_user->fetch();
             </select>
             <label>Salles</label>
             <select class="form-select" name="salles" id="salles">
-                <?php if($name_salle_user == null){
+                <?php /*if($name_salle_user == null){
                     echo '<option> Pas de salle </option>';
                 }else{
                     echo $name_salle_user->id.' - '.$name_salle_user->name ;
-                }
+                }*/
 
                 foreach($salles_id as $salle_id => $salle){
-                    echo '<option value="'.$salle_id.'">'.$salle->id.' - '.$salle->name.'</option>';
+                    echo '<option value="'.$salle->id.'">'.$salle->id.' - '.$salle->name.'</option>';
                 }
             ?>
                 <option value=""> Pas de salle </option>
