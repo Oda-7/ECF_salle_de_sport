@@ -45,14 +45,14 @@ require_once '../sys/functions.php';
         echo '<th>'. $post->surname .'</th>';
         echo '<th>'. $post->email .'</th>';
         echo '<th>'. $post->age .'</th>';
-        echo '<th>'. roles($post->roles).'</th>';
+        echo '<th>'. var_dump(roles($post->roles)).'</th>';
         echo '<th>'. $post->confirmed_at .'</th>';
         echo '<th>'. fetchSalleName($post->salle_id) .'</th>';
         echo '<th >
             <div class="d-flex justify-content-around">';
             if($post->user_secret != 7){
                 echo'<a class="btn btn-warning my-2 mx-2" href="/App/@/admin/form.php?id=' . $post->id .'&salle_id='.$post->salle_id.'">Modifier</a>';
-                if($_SESSION['auth']->roles == 6 || $_SESSION['auth']->roles == 3 ){
+                if($_SESSION['auth']->roles == 6 || $_SESSION['auth']->roles == 3){
                     echo '<a class="btn btn-danger my-2 mx-2" href="/App/@/admin/delete.php?id=' . $post->id .'">Supprimer</a>  ';
                 }
             }else{
