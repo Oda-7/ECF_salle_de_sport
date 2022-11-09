@@ -94,7 +94,7 @@ if(empty($_SESSION['auth'])){
             <select class="form-select" name="salles" id="salles">
                 <?php
                 
-                $salle_id = NULL;
+                $salle_id = null;
                 if($user->salle_id != NULL){
                     echo '<option selected>'. $name_salle_user->id .' - '. $name_salle_user->name .'</option>';
                 }else{
