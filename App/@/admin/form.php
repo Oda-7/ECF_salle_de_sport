@@ -43,6 +43,8 @@ if(empty($_SESSION['auth'])){
     header('Location: /');
     exit();
 }
+
+var_dump($user->salle_id);
 ?>
 
 <div class="d-flex">
@@ -93,7 +95,6 @@ if(empty($_SESSION['auth'])){
             <label>Salles</label>
             <select class="form-select" name="salles" id="salles">
                 <?php
-                
                 $salle_id = null;
                 if($user->salle_id != null){
                     echo '<option selected>'. $name_salle_user->id .' - '. $name_salle_user->name .'</option>';
