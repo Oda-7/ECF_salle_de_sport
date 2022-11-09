@@ -95,14 +95,14 @@ if(empty($_SESSION['auth'])){
                 <?php if($user->id == null){
                     echo '<option> Pas de salle </option>';
                 }else{
-                    echo '<option>'. $name_salle_user->id .' - '. $name_salle_user->name .'</option>';
+                    echo '<option selected>'. $name_salle_user->id .' - '. $name_salle_user->name .'</option>';
                 }
 
                 foreach($salles_id as $salle_id => $salle){
                     echo '<option value="'.$salle->id.'">'.$salle->id.' - '.$salle->name.'</option>';
                 }
             ?>
-                <option value="null"> Pas de salle </option>
+                <option value="NULL"> Pas de salle </option>
             </select>
             <div class="mt-3">
                 <button type="submit" class="btn btn-primary" name="update">Modifier</button>
