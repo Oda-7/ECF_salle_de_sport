@@ -2,6 +2,7 @@
 
 function fetchSalleName($salle_id)
 {
+    var_dump($salle_id);
     if($salle_id){
         require 'bd.php';
         $req = $pdo->prepare('SELECT name FROM salles WHERE id = "'.$salle_id.'"');
