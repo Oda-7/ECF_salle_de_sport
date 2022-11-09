@@ -30,7 +30,7 @@ $users = $req->fetch();
 $salle_id_user = $_GET['salle_id'];
 $req_salle_user = $pdo->prepare('SELECT id,name FROM salles WHERE id = "'.$salle_id_user.'"');
 $req_salle_user->execute();
-$name_salle_user = $req_salle_user->fetchAll();
+$name_salle_user = $req_salle_user->fetch();
 ?>
 
 <?php require_once '../inc/header.php'; ?>
@@ -82,17 +82,17 @@ $name_salle_user = $req_salle_user->fetchAll();
             </select>
             <label>Salles</label>
             <select class="form-select" name="salles" id="salles">
-                <?php 
-                if($name_salle_user == null){
-                    echo '<option> --- --- </option>';
+                <?php if($name_salle_user == null){
+                    echo '<option> Pas de salle </option>';
+                }else{
+                    echo $name_salle_user['id'].' - '.$name_salle_user['name'] ;
                 }
-                ?>
-                <option value="none"> Pas de salle </option>
-            <?php 
+
                 foreach($salles_id as $salle_id => $salle){
                     echo '<option value="'.$salle_id.'">'.$salle->id.' - '.$salle->name.'</option>';
                 }
             ?>
+                <option value=""> Pas de salle </option>
             </select>
             <div class="mt-3">
                 <button type="submit" class="btn btn-primary" name="update">Modifier</button>
