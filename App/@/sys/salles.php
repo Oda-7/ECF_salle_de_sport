@@ -3,7 +3,7 @@
 function fetchSalleName($salle_id)
 {
     var_dump($salle_id);
-    if($salle_id != NULL){
+    if($salle_id == 0){
         require 'App/@/sys/bd.php';
         $req = $pdo->prepare('SELECT name FROM salles WHERE id = "'.$salle_id.'"');
         $req->execute();
