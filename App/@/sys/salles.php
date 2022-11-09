@@ -3,7 +3,7 @@
 function fetchSalleName($salle_id)
 {
     if(empty($salle_id)){
-        echo 'Aucune salle lié ';
+        return 'Aucune salle lié ';
     }else{
         require 'bd.php';
         $req = $pdo->prepare('SELECT name FROM salles WHERE id = "'.$salle_id.'"');
