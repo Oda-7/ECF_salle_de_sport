@@ -2,10 +2,7 @@
 require_once '../sys/bd.php';
 require_once '../sys/functions.php';
 
-if(empty($_SESSION['auth'])){
-    header('Location: /');
-    exit();
-}
+
 
 $user_id = $_GET['id'];
 $errors = array();
@@ -36,6 +33,11 @@ $salle_id_user = $_GET['salle_id'];
 $req_salle_user = $pdo->prepare('SELECT id,name FROM salles WHERE id = "'.$salle_id_user.'"');
 $req_salle_user->execute();
 $name_salle_user = $req_salle_user->fetch();
+
+if(empty($_SESSION['auth'])){
+    header('Location: /');
+    exit();
+}
 ?>
 
 <?php require_once '../inc/header.php'; ?>
