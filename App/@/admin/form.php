@@ -92,7 +92,9 @@ if(empty($_SESSION['auth'])){
             </select>
             <label>Salles</label>
             <select class="form-select" name="salles" id="salles">
-                <?php if($user->id == ''){
+                <?php
+                var_dump($user);
+                if($user->id == ''){
                     echo '<option> Pas de salle </option>';
                 }else{
                     echo '<option selected>'. $name_salle_user->id .' - '. $name_salle_user->name .'</option>';
