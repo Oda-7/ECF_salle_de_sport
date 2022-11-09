@@ -85,7 +85,7 @@ $name_salle_user = $req_salle_user->fetch();
                 <?php if($name_salle_user == null){
                     echo '<option> Pas de salle </option>';
                 }else{
-                    echo $name_salle_user['id'].' - '.$name_salle_user['name'] ;
+                    echo $name_salle_user->id.' - '.$name_salle_user->name ;
                 }
 
                 foreach($salles_id as $salle_id => $salle){
