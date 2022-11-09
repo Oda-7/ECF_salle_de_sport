@@ -83,12 +83,12 @@ $name_salle_user = $req_salle_user->fetchAll();
             <label>Salles</label>
             <select class="form-select" name="salles" id="salles">
                 <?php if($name_salle_user == null){
-                    echo '<option selected value=""> --- --- </option>';
+                    echo '<option selected> --- --- </option>';
                 }else{
                 echo $name_salle_user[0]->id.' - '.$name_salle_user[0]->name ;
                 }
                 ?>
-                <option value=""> Pas de salle </option>
+                <option> Pas de salle </option>
             <?php 
                 foreach($salles_id as $salle_id => $salle){
                     echo '<option value="'.$salle_id.'">'.$salle->id.' - '.$salle->name.'</option>';

@@ -60,16 +60,10 @@
             Lien utile
           </h6>
           <p>
-            <a href="#!" class="text-reset">Accueil</a>
+            <a href="/" class="text-reset">Accueil</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Services</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">A propos</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Contact</a>
+            <a href="/App/public/src/a_propos.php" class="text-reset">A propos</a>
           </p>
         </div>
         <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
@@ -77,7 +71,7 @@
           <p><i class="fas fa-home me-3"></i> 60-62 BD Diderot, 75012 Paris</p>
           <p>
             <i class="fas fa-envelope me-3"></i>
-            info@fitnesscore.fr
+            pdg@fitnesscore.fr
           </p>
           <p><i class="fas fa-phone me-3"></i> +33 7 86 69 12 05</p>
           <p><i class="fas fa-print me-3"></i> +33 3 56 85 02 45</p>
