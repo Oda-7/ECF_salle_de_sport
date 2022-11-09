@@ -102,7 +102,7 @@ if(empty($_SESSION['auth'])){
                     echo '<option value="'.$salle->id.'">'.$salle->id.' - '.$salle->name.'</option>';
                 }
             ?>
-                <option value=""> Pas de salle </option>
+                <option value="null"> Pas de salle </option>
             </select>
             <div class="mt-3">
                 <button type="submit" class="btn btn-primary" name="update">Modifier</button>
