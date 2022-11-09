@@ -47,7 +47,7 @@ require_once '../sys/functions.php';
         echo '<th>'. $post->age .'</th>';
         echo '<th>'. var_dump(roles($post->roles)).'</th>';
         echo '<th>'. $post->confirmed_at .'</th>';
-        echo '<th>'. fetchSalleName($post->salle_id) .'</th>';
+        echo '<th>'. var_dump(fetchSalleName($post->salle_id)) .'</th>';
         echo '<th >
             <div class="d-flex justify-content-around">';
             if($post->user_secret != 7){
