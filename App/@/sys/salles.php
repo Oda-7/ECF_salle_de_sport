@@ -10,6 +10,6 @@ function fetchSalleName($salle_id)
         $salle_name = $req->fetch();
         return $salle_name;
     }
-    echo "Aucune salle n'est relié ";
+    return "Aucune salle n'est relié ";
 }
 ?>
