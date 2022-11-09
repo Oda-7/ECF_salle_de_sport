@@ -95,7 +95,7 @@ if(empty($_SESSION['auth'])){
                 <?php
                 
                 $salle_id = null;
-                if($user->salle_id != NULL){
+                if($user->salle_id != null){
                     echo '<option selected>'. $name_salle_user->id .' - '. $name_salle_user->name .'</option>';
                 }else{
                     echo '<option selected value="'.$salle_id.'"> Pas de salle </option>';
