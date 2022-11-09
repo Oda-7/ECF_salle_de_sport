@@ -92,11 +92,11 @@ if(empty($_SESSION['auth'])){
             </select>
             <label>Salles</label>
             <select class="form-select" name="salles" id="salles">
-                <?php /*if($name_salle_user == null){
+                <?php if($user->id == null){
                     echo '<option> Pas de salle </option>';
                 }else{
                     echo $name_salle_user->id.' - '.$name_salle_user->name ;
-                }*/
+                }
 
                 foreach($salles_id as $salle_id => $salle){
                     echo '<option value="'.$salle->id.'">'.$salle->id.' - '.$salle->name.'</option>';
