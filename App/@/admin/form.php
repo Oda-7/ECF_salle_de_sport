@@ -3,7 +3,6 @@ require_once '../sys/bd.php';
 require_once '../sys/functions.php';
 
 
-
 $user_id = $_GET['id'];
 $errors = array();
 if(isset($_POST['update']) && $_POST['roles'] == 6){
@@ -34,13 +33,17 @@ $req_salle_user = $pdo->prepare('SELECT id,name FROM salles WHERE id = "'.$salle
 $req_salle_user->execute();
 $name_salle_user = $req_salle_user->fetch();
 
+
+?>
+
+<?php 
+require_once '../inc/header.php'; 
+
 if(empty($_SESSION['auth'])){
     header('Location: /');
     exit();
 }
 ?>
-
-<?php require_once '../inc/header.php'; ?>
 
 <div class="d-flex">
     <div class="p-5 my-6 m-auto bg-light rounded-3">
