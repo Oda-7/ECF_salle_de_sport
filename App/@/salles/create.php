@@ -2,6 +2,7 @@
 <?php
 require_once '../sys/functions.php';
 session_start();
+require_once '../inc/header.php'; 
 
 if(!empty($_POST)){
     $errors = array();
@@ -10,10 +11,10 @@ if(!empty($_POST)){
     
     if(empty($_POST['name']) || !preg_match('/^[a-zA-Zéèàêâ+\s]+$/', $_POST['name'])){
         $errors['name'] = "Le nom de la salle n'est pas valide ou vide";
-    }/*else{
+    }else{
         $req = $pdo->prepare('SELECT id FROM salles WHERE name = ?');
         $req->execute([$_POST['name']]);
-    }*/
+    }
     $_POST['name'] ='Fitness Core - '.$_POST['name'] ; 
     
     if(empty($_POST['adress']) || !preg_match('/^[a-zA-Zéèàêâ+\s\-0-9]+$/', $_POST['adress'])){
@@ -21,7 +22,7 @@ if(!empty($_POST)){
     }
 
     if(empty($errors)){ 
-        $req = $pdo->prepare("INSERT INTO salles SET name = ?,adress = ?, description = ?,name_img = ?, size = ?,type = ?, bin = ?");
+        $req = $pdo->prepare("INSERT INTO salles SET name = ?,adress = ?, description = ?, name_img = ?, size = ?,type = ?, bin = ?");
         $req->execute([$_POST['name'],$_POST['adress'],$_POST['description'],$_FILES['images']['name'],$_FILES['images']['size'],$_FILES['images']['type'],file_get_contents($_FILES['images']['tmp_name'])]);
         header('Location: salle.php');
         exit();
@@ -31,7 +32,7 @@ if(!empty($_POST)){
 
 ?>
 
-<?php require_once '../inc/header.php'; ?>
+
 
 <?php if(!empty($errors)): ?>
     <div class="alert alert-danger">
