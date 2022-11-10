@@ -106,7 +106,7 @@ if(empty($_SESSION['auth'])){
                 foreach($salles_id as $salle_id => $salle){
                     echo '<option value="'.$salle->id.'">'.$salle->id.' - '.$salle->name.'</option>';
                 }
-                echo '<option value="'.$salle_id.'"> Pas de salle </option>';
+                echo '<option value="'.$salle_id.'"> pas de salle </option>';
             ?>
             </select>
             <div class="mt-3">
