@@ -15,7 +15,7 @@ if(!empty($_POST['username']) && !empty($_POST['surname']) && !empty($_POST['ema
         $req_update->execute([$_POST['username'],$_POST['surname'],$_POST['email'], $_POST['roles']]);    
     }else{
     $req_update = $pdo->prepare('UPDATE users SET username = ?,surname = ?,email = ?, roles = ?, salle_id = ? WHERE id = "'.$user_id.'"');
-    $req_update->execute([$_POST['username'],$_POST['surname'],$_POST['email'], $_POST['roles']$_POST['salles']]);
+    $req_update->execute([$_POST['username'],$_POST['surname'],$_POST['email'], $_POST['roles'],$_POST['salles']]);
     }
     //return header('Location: admin.php');
 }else{
