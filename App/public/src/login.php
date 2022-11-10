@@ -30,7 +30,7 @@ if(isset($_POST['submit'])){
                         echo 'la';
                     }
                     
-                    header('Location: profil.php');
+                    //header('Location: profil.php');
                     exit();
                 }else{
                     $_SESSION['flash']['danger'] = "Veuillez confirmer votre E-mail";
