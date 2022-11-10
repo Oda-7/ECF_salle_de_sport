@@ -24,7 +24,7 @@ if(isset($_POST['submit'])){
                     $_SESSION['flash']['success'] = "Vous étes maintenant connecté";
 
                     if($_POST['remember']){
-                        $remember_token = str_random(250);
+                        $remember_token = str_random(10);
                         $pdo->prepare('UPDATE users SET remember_token = ? WHERE id = "'.$user->id.'"')->execute([$remember_token]);
                         setcookie('remember', $user->id . '//' . $remember_token . sha1($user->id . 'ratonlaveurs'), time() + 60 * 60 * 24 * 7);
                         echo 'la';
