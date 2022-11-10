@@ -13,7 +13,8 @@ if(!empty($_POST['username']) && !empty($_POST['surname']) && !empty($_POST['ema
     $req_update = $pdo->prepare('UPDATE users SET username = ?,surname = ?,email = ?, roles = ?, salle_id = ? WHERE id = "'.$user_id.'"');
     $req_update->execute([$_POST['username'],$_POST['surname'],$_POST['email'], $_POST['roles'],$_POST['salles']]);
     
-    return header('Location: admin.php');
+    var_dump($_POST['salles']);
+    //return header('Location: admin.php');
 }else{
     if(isset($_POST['update'])){
         $errors = '<div class="alert alert-danger" role="alert">Veuillez remplir les champs</div>';
@@ -44,7 +45,6 @@ if(empty($_SESSION['auth'])){
     exit();
 }
 
-var_dump($user->salle_id);
 ?>
 
 <div class="d-flex">
