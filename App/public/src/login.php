@@ -25,8 +25,9 @@ if(isset($_POST['submit'])){
 
                     if($_POST['remember']){
                         $remember_token = str_random(10);
-                        $req_remember = $pdo->prepare('UPDATE users SET remember_token = ?');
+                        $req_remember = $pdo->prepare('UPDATE users SET remember_token = ? WHERE id = "'.$user->id.'"');
                         $req_remember->execute([$remember_token]);
+                        var_dump($remember_token);
                         var_dump($req_remember->execute());
                         setcookie('remember', $user->id . '//' . $remember_token . sha1($user->id . 'ratonlaveurs'), time() + 60 * 60 * 24 * 7);
                         echo 'la';
