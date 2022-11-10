@@ -1,6 +1,5 @@
 <?php 
-//var_dump($_SESSION['remember']);
-var_dump($_COOKIE);
+
 function debug($variable){
     echo '<pre>' . print_r($variable, true) . '</pre>';
 }
