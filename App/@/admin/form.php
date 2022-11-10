@@ -45,7 +45,6 @@ if(empty($_SESSION['auth'])){
     header('Location: /');
     exit();
 }
-var_dump($users->salle_id);
 ?>
 
 <div class="d-flex">
