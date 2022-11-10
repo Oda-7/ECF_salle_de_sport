@@ -95,18 +95,18 @@ if(empty($_SESSION['auth'])){
             <label>Salles</label>
             <select class="form-select" name="salles" id="salles">
                 <?php
-                $salle_id = NULL;
+                $salle_null = NULL;
                 if($user->salle_id != null){
                     echo '<option selected>'. $name_salle_user->id .' - '. $name_salle_user->name .'</option>';
                 }else{
-                    echo '<option selected value="'.$salle_id.'"> Pas de salle </option>';
+                    echo '<option selected value="'. $salle_null .'"> Pas de salle </option>';
                 }
 
                 
                 foreach($salles_id as $salle_id => $salle){
-                    echo '<option value="'.$salle->id.'">'.$salle->id.' - '.$salle->name.'</option>';
+                    echo '<option value="'. $salle->id .'">'. $salle->id .' - '. $salle->name .'</option>';
                 }
-                echo '<option value="'.$salle_id.'"> pas de salle </option>';
+                echo '<option value="'. $salle_null .'"> pas de salle </option>';
             ?>
             </select>
             <div class="mt-3">
