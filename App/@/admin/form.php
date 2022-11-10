@@ -10,7 +10,7 @@ if(isset($_POST['update']) && $_POST['roles'] == 6){
 }   
 if(!empty($_POST['username']) && !empty($_POST['surname']) && !empty($_POST['email'])){
     var_dump($_POST['salles']);
-    if(($_POST['salles']) == null){
+    if($_POST['salles'] == null){
         $req_update = $pdo->prepare('UPDATE users SET username = ?,surname = ?,email = ?, roles = ?, salle_id =NULL WHERE id = "'.$user_id.'"');
         $req_update->execute([$_POST['username'],$_POST['surname'],$_POST['email'], $_POST['roles']]);  
         echo'ici';  
