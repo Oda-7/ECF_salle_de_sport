@@ -13,10 +13,10 @@ if(!empty($_POST['username']) && !empty($_POST['surname']) && !empty($_POST['ema
     if(($_POST['salles']) == null){
         $req_update = $pdo->prepare('UPDATE users SET username = ?,surname = ?,email = ?, roles = ?, salle_id = ? WHERE id = "'.$user_id.'"');
         $req_update->execute([$_POST['username'],$_POST['surname'],$_POST['email'], $_POST['roles'],NULL]);    
-    }
+    }else{
     $req_update = $pdo->prepare('UPDATE users SET username = ?,surname = ?,email = ?, roles = ?, salle_id = ? WHERE id = "'.$user_id.'"');
     $req_update->execute([$_POST['username'],$_POST['surname'],$_POST['email'], $_POST['roles'],$_POST['salles']]);
-    
+    }
     //return header('Location: admin.php');
 }else{
     if(isset($_POST['update'])){
@@ -36,7 +36,6 @@ $salle_id_user = $_GET['salle_id'];
 $req_salle_user = $pdo->prepare('SELECT id,name FROM salles WHERE id = "'.$salle_id_user.'"');
 $req_salle_user->execute();
 $name_salle_user = $req_salle_user->fetch();
-
 
 ?>
 
