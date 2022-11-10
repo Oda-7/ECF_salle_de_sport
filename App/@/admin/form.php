@@ -9,15 +9,12 @@ if(isset($_POST['update']) && $_POST['roles'] == 6){
     return header('location: confirm_pdg.php?id='.$_GET['id'].'&roles='.$_POST['roles']);  
 }   
 if(!empty($_POST['username']) && !empty($_POST['surname']) && !empty($_POST['email'])){
-    var_dump($_POST['salles']);
     if($_POST['salles'] == "null"){
         $req_update = $pdo->prepare('UPDATE users SET username = ?,surname = ?,email = ?, roles = ?, salle_id =NULL WHERE id = "'.$user_id.'"');
-        $req_update->execute([$_POST['username'],$_POST['surname'],$_POST['email'], $_POST['roles']]);  
-        echo'ici';  
+        $req_update->execute([$_POST['username'],$_POST['surname'],$_POST['email'], $_POST['roles']]);   
     }else{
     $req_update = $pdo->prepare('UPDATE users SET username = ?,surname = ?,email = ?, roles = ?, salle_id = ? WHERE id = "'.$user_id.'"');
     $req_update->execute([$_POST['username'],$_POST['surname'],$_POST['email'], $_POST['roles'],$_POST['salles']]);
-    echo 'la';
     }
     //return header('Location: admin.php');
 }else{
@@ -99,6 +96,7 @@ if(empty($_SESSION['auth'])){
             <label>Salles</label>
             <select class="form-select" name="salles" id="salles">
                 <?php
+                var_dump($user->salle_id);
                 if($user->salle_id != null){
                     echo '<option selected>'. $name_salle_user->id .' - '. $name_salle_user->name .'</option>';
                 }else{
