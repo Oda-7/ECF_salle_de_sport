@@ -96,7 +96,7 @@ var_dump($users->salle_id);
             <label>Salles</label>
             <select class="form-select" name="salles" id="salles">
                 <?php
-                if($users->salle_id != NULL){
+                if($users->salle_id !== NULL){
                     echo '<option selected>'. $name_salle_user->id .' - '. $name_salle_user->name .'</option>';
                 }else{
                     echo '<option selected value="null"> Pas de salle </option>';
