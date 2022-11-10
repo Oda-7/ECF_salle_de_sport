@@ -16,7 +16,7 @@ if(!empty($_POST['username']) && !empty($_POST['surname']) && !empty($_POST['ema
     $req_update = $pdo->prepare('UPDATE users SET username = ?,surname = ?,email = ?, roles = ?, salle_id = ? WHERE id = "'.$user_id.'"');
     $req_update->execute([$_POST['username'],$_POST['surname'],$_POST['email'], $_POST['roles'],$_POST['salles']]);
     }
-    //return header('Location: admin.php');
+    return header('Location: admin.php');
 }else{
     if(isset($_POST['update'])){
         $errors = '<div class="alert alert-danger" role="alert">Veuillez remplir les champs</div>';
@@ -45,7 +45,7 @@ if(empty($_SESSION['auth'])){
     header('Location: /');
     exit();
 }
-
+var_dump($user->salle_id);
 ?>
 
 <div class="d-flex">
@@ -96,8 +96,7 @@ if(empty($_SESSION['auth'])){
             <label>Salles</label>
             <select class="form-select" name="salles" id="salles">
                 <?php
-                var_dump($user->salle_id);
-                if($user->salle_id != null){
+                if($user->salle_id == $name_salle_user->id){
                     echo '<option selected>'. $name_salle_user->id .' - '. $name_salle_user->name .'</option>';
                 }else{
                     echo '<option selected value="null"> Pas de salle </option>';
