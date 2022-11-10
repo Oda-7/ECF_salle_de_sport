@@ -10,7 +10,7 @@ if(isset($_POST['update']) && $_POST['roles'] == 6){
 }   
 if(!empty($_POST['username']) && !empty($_POST['surname']) && !empty($_POST['email'])){
     var_dump($_POST['salles']);
-    if(!empty($_POST['salles'])){
+    if(($_POST['salles']) == null){
         $req_update = $pdo->prepare('UPDATE users SET username = ?,surname = ?,email = ?, roles = ?, salle_id = ? WHERE id = "'.$user_id.'"');
         $req_update->execute([$_POST['username'],$_POST['surname'],$_POST['email'], $_POST['roles'],$_POST['salles']]);
     }
@@ -98,18 +98,17 @@ if(empty($_SESSION['auth'])){
             <label>Salles</label>
             <select class="form-select" name="salles" id="salles">
                 <?php
-                $salle_null = NULL;
                 if($user->salle_id != null){
                     echo '<option selected>'. $name_salle_user->id .' - '. $name_salle_user->name .'</option>';
                 }else{
-                    echo '<option selected value="'. $salle_null .'"> Pas de salle </option>';
+                    echo '<option selected value="null"> Pas de salle </option>';
                 }
 
                 
                 foreach($salles_id as $salle_id => $salle){
                     echo '<option value="'. $salle->id .'">'. $salle->id .' - '. $salle->name .'</option>';
                 }
-                echo '<option value="'. $salle_null .'"> pas de salle </option>';
+                echo '<option value="null"> pas de salle </option>';
             ?>
             </select>
             <div class="mt-3">
