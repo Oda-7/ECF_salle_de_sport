@@ -26,7 +26,7 @@ function reconnect_from_cookie(){
     }
 
     if(isset($_COOKIE['remember']) && !isset($_SESSION['auth']) ){
-        require_once '../DataBase/bd.php';
+        require_once 'bd.php';
         if(!isset($pdo)){
             global $pdo;
         }
