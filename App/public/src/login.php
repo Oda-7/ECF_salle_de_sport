@@ -27,13 +27,11 @@ if(isset($_POST['submit'])){
                         $remember_token = array(str_random(250));
                         $req_remember = $pdo->prepare('UPDATE users SET remember_token = ? WHERE id = "'.$user->id.'"');
                         $req_remember->execute($remember_token);
-                        var_dump($remember_token);
-                        var_dump($req_remember->execute());
                         setcookie('remember', $user->id . '//' . $remember_token . sha1($user->id . 'ratonlaveurs'), time() + 60 * 60 * 24 * 7);
                         echo 'la';
                     }
                     
-                    //header('Location: profil.php');
+                    header('Location: profil.php');
                     exit();
                 }else{
                     $_SESSION['flash']['danger'] = "Veuillez confirmer votre E-mail";
