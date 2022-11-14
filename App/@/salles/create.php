@@ -11,10 +11,8 @@ if(!empty($_POST)){
     
     if(empty($_POST['name']) || !preg_match('/^[a-zA-Zéèàêâ+\s]+$/', $_POST['name'])){
         $errors['name'] = "Le nom de la salle n'est pas valide ou vide";
-    }else{
-        $req = $pdo->prepare('SELECT id FROM salles WHERE name = ?');
-        $req->execute([$_POST['name']]);
     }
+    
     $_POST['name'] ='Fitness Core - '.$_POST['name'] ; 
     
     if(empty($_POST['adress']) || !preg_match('/^[a-zA-Zéèàêâ+\s\-0-9]+$/', $_POST['adress'])){
